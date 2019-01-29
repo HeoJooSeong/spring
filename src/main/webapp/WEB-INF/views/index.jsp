@@ -15,6 +15,5 @@ subject : ${board.subject}<br/>
 contents: ${board.contents}<br/>
 dateTime: ${board.dateTime}<br/>
 hits : ${board.hits}
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 </body>
 </html>
