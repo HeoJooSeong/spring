@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<%--<%@ include file="headerBar.jsp" %>--%>
+
 <br/><br/>
 <a href="/board/write"><h1>게시판 글 쓰기</h1></a>
 <img src="/resources/images/spring.png"/><br/>
@@ -15,5 +15,6 @@ subject : ${board.subject}<br/>
 contents: ${board.contents}<br/>
 dateTime: ${board.dateTime}<br/>
 hits : ${board.hits}
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 </body>
 </html>
