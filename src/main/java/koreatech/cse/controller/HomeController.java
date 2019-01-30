@@ -1,6 +1,7 @@
 package koreatech.cse.controller;
 
 import koreatech.cse.repository.BoardMapper;
+import koreatech.cse.repository.UserMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,9 @@ import java.util.Map;
 public class HomeController {
     @Inject
     private BoardMapper boardMapper;
+
+    @Inject
+    private UserMapper userMapper;
 
     @Value("${env.text}")
     String envText;
