@@ -19,6 +19,12 @@ public interface BoardMapper {
     @Select("select * from board")
     List<Board> findAll();
 
+    @Select("select * from board where id = #{id}")
+    Board findOne(@Param("id") int id);
+
     @Delete("DELETE FROM board WHERE ID = #{id}")
     void delete(@Param("id") int id);
+
+    @Update("UPDATE board SET subject = #{subject}, contents = #{contents}, dateTime = now() WHERE ID = #{id}")
+    void update(Board board);
 }

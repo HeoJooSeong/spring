@@ -17,7 +17,10 @@
             org.springframework.web.context.ContextLoaderListener
         </listener-class>
     </listener>
-
+    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/views/error/403.jsp</location>
+    </error-page>
     <!--SpringSecurityFilterChain-->
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>

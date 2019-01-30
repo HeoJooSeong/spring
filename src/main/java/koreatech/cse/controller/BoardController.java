@@ -1,6 +1,7 @@
 package koreatech.cse.controller;
 
 import koreatech.cse.domain.Board;
+import koreatech.cse.domain.User;
 import koreatech.cse.repository.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,6 +37,19 @@ public class BoardController {
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String delete(@RequestParam int id) {
         boardMapper.delete(id);
+        return "redirect:/index";
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public String edit(@RequestParam int id, Model model) {
+        model.addAttribute("board", boardMapper.findOne(id));
+        return "writeEdit";
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public String edit(@ModelAttribute Board board) {
+        boardMapper.update(board);
+
         return "redirect:/index";
     }
 }

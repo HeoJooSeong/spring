@@ -29,7 +29,7 @@
             <td>${u.age}</td>
             <td><fmt:formatDate value="${u.dateTime}" pattern="yyyy.MM.dd"/></td>
 
-            <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
                 <td>
 
                     <a href="/user/edit?id=${u.id}">수정</a>
