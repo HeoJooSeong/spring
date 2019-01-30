@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 import javax.inject.Inject;
@@ -29,6 +30,12 @@ public class BoardController {
     @RequestMapping(value = "/write", method = RequestMethod.POST)
     public String write(Model model,@ModelAttribute Board board){
         boardMapper.insert(board);
+        return "redirect:/index";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String delete(@RequestParam int id) {
+        boardMapper.delete(id);
         return "redirect:/index";
     }
 }

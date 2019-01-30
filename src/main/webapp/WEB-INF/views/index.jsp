@@ -24,9 +24,8 @@
         <td>내용</td>
         <td>조회수</td>
         <td>날짜</td>
-        <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <td></td>
-        </sec:authorize>
+        <td></td>
+
     </tr>
     <c:forEach var = "u" varStatus = "varStatus" items="${board}">
         <tr>
@@ -36,14 +35,13 @@
             <td>${u.hits}</td>
             <td><fmt:formatDate value="${u.dateTime}" pattern="yyyy.MM.dd"/></td>
 
-            <sec:authorize access="hasRole('ROLE_ADMIN')">
-                <td>
+            <td>
 
-                    <a href="/board/edit?id=${u.id}">수정</a>
-                    <a href="/board/delete?id=${u.id}">삭제</a>
+                <a href="/board/edit?id=${u.id}">수정</a>
+                <a href="/board/delete?id=${u.id}">삭제</a>
 
-                </td>
-            </sec:authorize>
+            </td>
+
         </tr>
     </c:forEach>
 </table>

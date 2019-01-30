@@ -18,4 +18,7 @@ public interface BoardMapper {
 
     @Select("select * from board")
     List<Board> findAll();
+
+    @Delete("DELETE FROM board WHERE ID = #{id}")
+    void delete(@Param("id") int id);
 }
