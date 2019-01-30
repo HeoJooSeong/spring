@@ -41,6 +41,8 @@ public class UserService implements UserDetailsService {
 
     private HashMap<Integer, AccessGrant> kakaoAccessTokenMap = new HashMap();
     private HashMap<Long, AccessGrant> facebookAccessTokenMap = new HashMap();
+
+
     public Boolean signup(User user) {
         if(user.getEmail() == null || user.getPassword() ==  null)
             return false;

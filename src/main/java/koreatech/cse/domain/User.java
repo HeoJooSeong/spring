@@ -5,6 +5,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 public class User implements UserDetails {
@@ -13,6 +14,15 @@ public class User implements UserDetails {
     private String email;   //이메일을 로그인 아이디로
     private String password;    //비밀번호
     private int age;
+    private Date dateTime;
+
+    public Date getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(Date dateTime) {
+        this.dateTime = dateTime;
+    }
 
     private List<Authority> authorities;
 

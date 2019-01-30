@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface UserMapper {
-    @Insert("INSERT INTO USERS (NAME, EMAIL, PASSWORD, AGE) VALUES (#{name}, #{email}, #{password}, #{age})")
+    @Insert("INSERT INTO USERS (NAME, EMAIL, PASSWORD, AGE, dateTime) VALUES (#{name}, #{email}, #{password}, #{age},NOW())")
     @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = int.class)
     void insert(User user);
 

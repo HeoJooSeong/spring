@@ -1,6 +1,8 @@
 package koreatech.cse.controller;
 
 import koreatech.cse.domain.Board;
+import koreatech.cse.repository.BoardMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +16,8 @@ import java.util.Date;
 @Controller
 @RequestMapping("/board")
 public class BoardController {
+    @Inject
+    private BoardMapper boardMapper;
 
     @RequestMapping("/write")
     public String write(Model model){
@@ -24,6 +28,7 @@ public class BoardController {
 
     @RequestMapping(value = "/write", method = RequestMethod.POST)
     public String write(Model model,@ModelAttribute Board board){
+        boardMapper.insert(board);
         System.out.println(board.toString());
         board.setDateTime(new Date());
         board.setHits(1);

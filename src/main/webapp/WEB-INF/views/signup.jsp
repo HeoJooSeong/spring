@@ -5,6 +5,7 @@
   <title>Form Test</title>
 </head>
 <body>
+회원가입
 <form:form modelAttribute="user">
   name: <form:input path="name"/><br/>
   email: <form:input path="email"/><br/>
