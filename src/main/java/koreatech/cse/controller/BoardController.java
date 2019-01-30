@@ -29,11 +29,6 @@ public class BoardController {
     @RequestMapping(value = "/write", method = RequestMethod.POST)
     public String write(Model model,@ModelAttribute Board board){
         boardMapper.insert(board);
-        System.out.println(board.toString());
-        board.setDateTime(new Date());
-        board.setHits(1);
-        model.addAttribute("board",board);
-
-        return "index";
+        return "redirect:/index";
     }
 }

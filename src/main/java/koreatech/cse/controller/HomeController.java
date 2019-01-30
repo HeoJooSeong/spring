@@ -1,10 +1,12 @@
 package koreatech.cse.controller;
 
+import koreatech.cse.repository.BoardMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +15,9 @@ import java.util.Map;
 @Controller
 @RequestMapping("/")
 public class HomeController {
+    @Inject
+    private BoardMapper boardMapper;
+
     @Value("${env.text}")
     String envText;
 
@@ -31,7 +36,9 @@ public class HomeController {
 
     @RequestMapping("/index")
     public String index(Model model){
-
+        // 1. boardMapper에서 board 결과를 가져오고
+        model.addAttribute("board",boardMapper.findAll());
+        // 2. model 에 board 결과를 싣고 보내면 된다.
         return "index";
     }
 

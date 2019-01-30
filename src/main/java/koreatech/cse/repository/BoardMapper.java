@@ -16,4 +16,6 @@ public interface BoardMapper {
     @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = int.class)
     void insert(Board board);
 
+    @Select("select * from board")
+    List<Board> findAll();
 }
