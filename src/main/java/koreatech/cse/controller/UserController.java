@@ -69,7 +69,7 @@ public class UserController {
         return "redirect:/user/list";
     }
 
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String delete(@RequestParam int id) {
         userMapper.delete(id);

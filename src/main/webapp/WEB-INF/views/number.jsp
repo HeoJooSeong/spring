@@ -13,9 +13,10 @@
     </style>
 </head>
 <body>
+<c:forEach var="num" items="${num}">
+    <h1>${num.name} , ${num.num}</h1>
+</c:forEach>
 
-<h1>${num.name}</h1>
-<h1>${num.num}</h1>
 
 </body>
 </html>

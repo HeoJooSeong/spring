@@ -12,7 +12,7 @@
 <c:if test="${empty e}">e</c:if>
 
 <%--choose--%>
-<c:set var="a" value="3"/>
+<c:set var="a" value="0"/>
 <c:choose>
     <c:when test="${a > 1}">
         a가 1보다 큽니다.
@@ -45,7 +45,7 @@
 
 
 <%--redirect--%>
-<%--<c:set var="address" value="g"/>
+<c:set var="address" value="g"/>--%>
 
 <c:choose>
     <c:when test="${address == 'g'}">
@@ -57,7 +57,7 @@
     <c:otherwise>
         <c:redirect url="http://www.daum.net"/>
     </c:otherwise>
-</c:choose>--%>
+</c:choose>
 
 
 </body>

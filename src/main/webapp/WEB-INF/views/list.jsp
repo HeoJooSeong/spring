@@ -9,8 +9,12 @@
 <body>
 <%@ include file="include/headerBar.jsp" %>
 
+<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+
 <h2>회원 리스트</h2><br/><br/>
-<table style="border:1px solid black">
+
+<table id="example" class="display" style="width:100%">
+    <thead>
     <tr>
         <td></td>
         <td>이름</td>
@@ -21,6 +25,9 @@
             <td></td>
         </sec:authorize>
     </tr>
+    </thead>
+    <tbody>
+
     <c:forEach var = "u" varStatus = "varStatus" items="${users}">
         <tr>
             <td>${varStatus.count}</td>
@@ -40,5 +47,12 @@
         </tr>
     </c:forEach>
 </table>
+
 </body>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
 </html>

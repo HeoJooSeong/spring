@@ -4,6 +4,7 @@ import koreatech.cse.repository.BoardMapper;
 import koreatech.cse.repository.NumberMapper;
 import koreatech.cse.repository.UserMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -39,13 +40,18 @@ public class HomeController {
         return "hello";
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/number")
     public String number(Model model) {
 
         model.addAttribute("num",numberMapper.findAll());
         return "number";
     }
-
+    @RequestMapping("/insert")
+    public String insert(@RequestParam(name="name") String name, @RequestParam(name="num") int num) {
+        numberMapper.insert(name,num);
+        return "redirect:/";
+    }
 
     @RequestMapping("/index")
     public String index(Model model){
@@ -55,6 +61,11 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping("/index2")
+    public String index2(Model model){
+
+        return "index2";
+    }
     @RequestMapping("/jstlTest")
     public String emptyTest(Model model) {
         String a = null;
