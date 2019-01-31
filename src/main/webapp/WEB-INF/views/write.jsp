@@ -7,9 +7,10 @@
 </head>
 
 <body>
-<form:form modelAttribute="board">
+<form:form modelAttribute="board" enctype="multipart/form-data">
 subject: <form:input path="subject"/><br/>
 contents: <form:input path="contents"/><br/>
+file: <form:input path="file" type="file"/><br/>
 <input type="submit" value="write" onclick="show_alert()"/>
 </form:form>
 </body>

@@ -1,6 +1,8 @@
 package koreatech.cse.domain;
 
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.Date;
 
 public class Board{
@@ -9,7 +11,15 @@ public class Board{
     private String contents;
     private Date dateTime;
     private int hits;
+    private MultipartFile file;
 
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
 
     public int getId() {
         return id;
