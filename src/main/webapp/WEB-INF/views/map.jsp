@@ -12,7 +12,7 @@
 <script>
     var container = document.getElementById('map');
     var options = {
-        center: new daum.maps.LatLng(33.450701, 126.570667),
+        center: new daum.maps.LatLng(36.841842, 127.143434),
         level: 3
     };
 

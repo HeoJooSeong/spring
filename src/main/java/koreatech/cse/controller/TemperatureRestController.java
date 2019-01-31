@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -39,7 +40,6 @@ public class TemperatureRestController {
     @RequestMapping(value="/board", method= RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<Board>> boardResponseEntity() {
         List<Board> boards = boardMapper.findAll();
-
         return new ResponseEntity<List<Board>>(boards, HttpStatus.OK);
     }
 
