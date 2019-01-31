@@ -1,6 +1,8 @@
 package koreatech.cse.controller;
 
+import koreatech.cse.domain.Board;
 import koreatech.cse.domain.Temperature;
+import koreatech.cse.repository.BoardMapper;
 import koreatech.cse.repository.TemperatureMapper;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,8 @@ import java.util.List;
 public class TemperatureRestController {
     @Inject
     private TemperatureMapper temperatureMapper;
+    @Inject
+    private BoardMapper boardMapper;
 
     @Transactional
     @RequestMapping(value="/temperature/{sensorId}", method= RequestMethod.GET, produces = "application/json")
@@ -27,6 +31,16 @@ public class TemperatureRestController {
             return new ResponseEntity<Temperature>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<Temperature>(temperature, HttpStatus.OK);
+    }
+
+
+
+    @Transactional
+    @RequestMapping(value="/board", method= RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<List<Board>> boardResponseEntity() {
+        List<Board> boards = boardMapper.findAll();
+
+        return new ResponseEntity<List<Board>>(boards, HttpStatus.OK);
     }
 
     @Transactional
