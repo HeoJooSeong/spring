@@ -1,6 +1,7 @@
 package koreatech.cse.controller;
 
 import koreatech.cse.repository.BoardMapper;
+import koreatech.cse.repository.NumberMapper;
 import koreatech.cse.repository.UserMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -8,16 +9,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
     @Inject
     private BoardMapper boardMapper;
+
+    @Inject
+    private NumberMapper numberMapper;
 
     @Inject
     private UserMapper userMapper;
@@ -37,6 +38,14 @@ public class HomeController {
         model.addAttribute("a",envText);
         return "hello";
     }
+
+    @RequestMapping("/number")
+    public String number(Model model) {
+
+        model.addAttribute("num",numberMapper.findAll());
+        return "number";
+    }
+
 
     @RequestMapping("/index")
     public String index(Model model){
