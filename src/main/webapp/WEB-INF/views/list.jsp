@@ -7,7 +7,7 @@
     <title>회원 리스트</title>
 </head>
 <body>
-<%@ include file="headerBar.jsp" %>
+<%@ include file="include/headerBar.jsp" %>
 
 <h2>회원 리스트</h2><br/><br/>
 <table style="border:1px solid black">

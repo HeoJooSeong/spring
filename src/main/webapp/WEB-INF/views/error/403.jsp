@@ -6,7 +6,7 @@
     <title>Spring 실습</title>
 </head>
 <body>
-<%@ include file="../headerBar.jsp" %>
+<%@ include file="../include/headerBar.jsp" %>
 <h1>권한이 없습니다.</h1>
 <img src="/resources/images/spring.png"/><br/>
 HELLO WORLD !!~~~~~
