@@ -15,7 +15,23 @@
 <body>
 <%@ include file="include/headerBar.jsp" %>
 
+<br/>
+<div class="row" align="center" style="font-size: 2.0em">
 
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container col-md-4">
+          Home
+        </div>
+        <div class="container col-md-4">
+            about
+        </div>
+        <div class="container col-md-4">
+            contact
+        </div>
+    </nav>
+</div>
+<br/>
 <div class="row">
     <div class="col-md-3" align="center">
         <p style="background-color: skyblue !important; font-size: 2.0em !important;">1</p>

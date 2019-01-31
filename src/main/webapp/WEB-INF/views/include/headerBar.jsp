@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>​
 
+
+<br/>
 <c:set var="user" value="${SPRING_SECURITY_CONTEXT.authentication.principal}"/>
 <a href="/user/signup">회원가입</a>
 <sec:authorize access="isAnonymous()">
@@ -25,3 +27,4 @@ ${user.name}님 로그인하셨습니다.
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
