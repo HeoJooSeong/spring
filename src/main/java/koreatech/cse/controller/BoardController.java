@@ -4,6 +4,7 @@ import koreatech.cse.domain.Board;
 import koreatech.cse.domain.User;
 import koreatech.cse.repository.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -23,6 +24,10 @@ import java.util.UUID;
 public class BoardController {
     @Inject
     private BoardMapper boardMapper;
+
+    @Value("${env.username}")
+    private String username;
+
 
     @RequestMapping("/write")
     public String write(Model model){

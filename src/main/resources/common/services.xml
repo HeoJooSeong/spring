@@ -34,7 +34,7 @@
     </bean>
     <!-- 업로드된 파일의 저장 위치 지정 -->
     <bean id="uploadPath" class="java.lang.String">
-        <constructor-arg value="/Users/zoostar/Desktop"></constructor-arg>
+        <constructor-arg value="C:\file"></constructor-arg>
     </bean>
     <!-- MyBatis -->
     <mybatis:scan base-package="koreatech.cse.repository" />

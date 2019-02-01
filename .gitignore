@@ -1,5 +1,3 @@
 .idea
 target
 *.iml
-src/main/resources/dev/*
-src/main/resources/prod/*
